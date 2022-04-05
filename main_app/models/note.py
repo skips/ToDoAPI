@@ -10,3 +10,4 @@ class Note(db.Model):
     name = db.Column(db.String(255))
     text = db.Column(db.String)
     board_id = db.Column(db.Integer, db.ForeignKey('board.id'))
+    comments = db.relationship("Comment", backref="note_owner")

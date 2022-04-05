@@ -1,6 +1,4 @@
 from flask import Blueprint, request
-
-from main_app.schemas.comment_schema import CommentSchema
 from registry import get_registry
 from main_app.schemas.note_schema import NoteSchema
 
@@ -28,9 +26,7 @@ def get_note():
     note = note_repo.get_note_by_id(id)
     note_schema = NoteSchema()
     note_serialized = note_schema.dump(note)
-    comments_schema = CommentSchema(many=True, only=("id", "text"))
-    comments_serialized = comments_schema.dump(note.comment.all())
-    return {"note": note_serialized, "comments": comments_serialized}
+    return note_serialized
 
 @note_api.route("/get-note-all", methods=["GET"])
 def get_note_all():

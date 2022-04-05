@@ -9,4 +9,3 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String)
     note_id = db.Column(db.Integer, db.ForeignKey("note.id"))
-    note = db.relationship('Note', backref=db.backref('comment', lazy='dynamic'))
