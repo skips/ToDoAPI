@@ -1,5 +1,4 @@
 from flask import Blueprint, request
-
 from registry import get_registry
 from main_app.schemas.comment_schema import CommentSchema
 

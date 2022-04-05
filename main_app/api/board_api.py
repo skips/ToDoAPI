@@ -1,8 +1,7 @@
 from flask import Blueprint, request
-
 from registry import get_registry
 from main_app.schemas.board_schema import BoardSchema
-from main_app.schemas.note_schema import NoteSchema
+
 
 board_api = Blueprint('board', __name__)
 
