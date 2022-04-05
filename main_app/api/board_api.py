@@ -26,9 +26,6 @@ def get_board():
     board = board_repo.get_board_by_id(id)
     board_schema = BoardSchema()
     board_serialized = board_schema.dump(board)
-    # notes_schema = NoteSchema(many=True, only=("id", "name", "text"))
-    # notes_serialized = notes_schema.dump(board.note.all())
-    #return {"board": board_serialized, "notes": notes_serialized}
     return board_serialized
 
 
